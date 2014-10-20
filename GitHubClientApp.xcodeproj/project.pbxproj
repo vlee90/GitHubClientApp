@@ -218,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB59E68019F5AE1F00F1DC7A /* NetworkController.swift in Sources */,
 				EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */,
 				EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */,
 				EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */,
@@ -415,6 +416,7 @@
 				EB59E67719F5A3E200F1DC7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB59E67819F5A3E200F1DC7A /* Build configuration list for PBXNativeTarget "GitHubClientAppTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +425,7 @@
 				EB59E67A19F5A3E200F1DC7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
