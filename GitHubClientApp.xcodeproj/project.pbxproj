@@ -14,6 +14,7 @@
 		EB59E66319F5A3E200F1DC7A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB59E66219F5A3E200F1DC7A /* Images.xcassets */; };
 		EB59E66619F5A3E200F1DC7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB59E66419F5A3E200F1DC7A /* LaunchScreen.xib */; };
 		EB59E67219F5A3E200F1DC7A /* GitHubClientAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E67119F5A3E200F1DC7A /* GitHubClientAppTests.swift */; };
+		EB59E68019F5AE1F00F1DC7A /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E67F19F5AE1F00F1DC7A /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		EB59E66B19F5A3E200F1DC7A /* GitHubClientAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubClientAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB59E67019F5A3E200F1DC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB59E67119F5A3E200F1DC7A /* GitHubClientAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClientAppTests.swift; sourceTree = "<group>"; };
+		EB59E67F19F5AE1F00F1DC7A /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */,
 				EB59E65D19F5A3E200F1DC7A /* ViewController.swift */,
+				EB59E67F19F5AE1F00F1DC7A /* NetworkController.swift */,
 				EB59E65F19F5A3E200F1DC7A /* Main.storyboard */,
 				EB59E66219F5A3E200F1DC7A /* Images.xcassets */,
 				EB59E66419F5A3E200F1DC7A /* LaunchScreen.xib */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB59E68019F5AE1F00F1DC7A /* NetworkController.swift in Sources */,
 				EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */,
 				EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */,
 				EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */,
@@ -411,6 +415,7 @@
 				EB59E67719F5A3E200F1DC7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB59E67819F5A3E200F1DC7A /* Build configuration list for PBXNativeTarget "GitHubClientAppTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				EB59E67A19F5A3E200F1DC7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
