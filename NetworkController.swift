@@ -9,7 +9,7 @@
 import Foundation
 
 class NetworkController {
-    var url = NSURL(fileURLWithPath: "/Users/owner/Documents/repo/GitHubClientApp/server.js")
+    var url = NSURL(string: "http://localhost:3000/")
     var configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     var urlSession: NSURLSession?
     
