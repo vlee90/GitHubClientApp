@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB369F2319F5BB06007E8C27 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB369F2219F5BB06007E8C27 /* NetworkController.swift */; };
 		EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */; };
 		EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65A19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld */; };
 		EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65D19F5A3E200F1DC7A /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB369F2219F5BB06007E8C27 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
 		EB59E65319F5A3E200F1DC7A /* GitHubClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB59E65719F5A3E200F1DC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */,
 				EB59E65D19F5A3E200F1DC7A /* ViewController.swift */,
+				EB369F2219F5BB06007E8C27 /* NetworkController.swift */,
 				EB59E67D19F5A8F600F1DC7A /* SplitContainerViewController.swift */,
 				EB59E65F19F5A3E200F1DC7A /* Main.storyboard */,
 				EB59E66219F5A3E200F1DC7A /* Images.xcassets */,
@@ -218,7 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB59E68019F5AE1F00F1DC7A /* NetworkController.swift in Sources */,
+				EB369F2319F5BB06007E8C27 /* NetworkController.swift in Sources */,
 				EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */,
 				EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */,
 				EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */,
