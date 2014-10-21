@@ -36,7 +36,7 @@ class RepositoryViewController: UIViewController, UITableViewDataSource, UITable
             
             let profileImageString = ownerDictionary["avatar_url"] as String
             let profileImageURL = NSURL(string: profileImageString)
-            self.networkController?.createUIImage(profileImageURL, completionHanlder: { (dataToPass) -> Void in
+            self.networkController?.createUIImage(profileImageURL!, completionHanlder: { (dataToPass) -> Void in
                 let image = UIImage(data: dataToPass!)
                 cell.imageViewProfile.image = image
             })
