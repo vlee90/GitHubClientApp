@@ -18,6 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //  Will run code when app is ALMOST ready to run.
+        let tokenKey = "token"
+        if let value = NSUserDefaults.standardUserDefaults().valueForKey(tokenKey) as? String {
+            println("Token in memory")
+            // need to set token to session
+            let token = self.networkController.authorizationToken
+            var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            configuration.HTTPAdditionalHeaders = ["Authorization" : "token \(token!)"]
+            self.networkController.session = NSURLSession(configuration: configuration)
+        }
+        else {
+            println("Token not in memory")
+            self.networkController.requestOAuthAcessGET()
+            let token = self.networkController.authorizationToken
+            NSUserDefaults.standardUserDefaults().setObject(token, forKey: tokenKey)
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
         return true
     }
 
