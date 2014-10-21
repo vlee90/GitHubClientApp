@@ -8,8 +8,14 @@
 
 import UIKit
 
-class RepositoryTableViewCell: UITableViewCell {
-
+class RepositoryCell: UITableViewCell {
+    @IBOutlet weak var repoNameLabel: UILabel!
+    @IBOutlet weak var imageViewProfile: UIImageView!
+    @IBOutlet weak var watchLabel: UILabel!
+    @IBOutlet weak var starLabel: UILabel!
+    @IBOutlet weak var forkLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

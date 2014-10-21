@@ -10,7 +10,8 @@
 		EB369F2319F5BB06007E8C27 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB369F2219F5BB06007E8C27 /* NetworkController.swift */; };
 		EB369F2519F5C126007E8C27 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB369F2419F5C126007E8C27 /* RepositoryViewController.swift */; };
 		EB369F2719F5C222007E8C27 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB369F2619F5C222007E8C27 /* RepositoryCell.xib */; };
-		EB369F2919F5C252007E8C27 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB369F2819F5C252007E8C27 /* RepositoryTableViewCell.swift */; };
+		EB369F2919F5C252007E8C27 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB369F2819F5C252007E8C27 /* RepositoryCell.swift */; };
+		EB369F3319F5D1A8007E8C27 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = EB369F3219F5D1A8007E8C27 /* server.js */; };
 		EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */; };
 		EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65A19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld */; };
 		EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65D19F5A3E200F1DC7A /* ViewController.swift */; };
@@ -35,7 +36,8 @@
 		EB369F2219F5BB06007E8C27 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkController.swift; path = ../NetworkController.swift; sourceTree = "<group>"; };
 		EB369F2419F5C126007E8C27 /* RepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		EB369F2619F5C222007E8C27 /* RepositoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
-		EB369F2819F5C252007E8C27 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		EB369F2819F5C252007E8C27 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		EB369F3219F5D1A8007E8C27 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = server.js; path = ../server.js; sourceTree = "<group>"; };
 		EB59E65319F5A3E200F1DC7A /* GitHubClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB59E65719F5A3E200F1DC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				EB369F2619F5C222007E8C27 /* RepositoryCell.xib */,
-				EB369F2819F5C252007E8C27 /* RepositoryTableViewCell.swift */,
+				EB369F2819F5C252007E8C27 /* RepositoryCell.swift */,
+				EB59E66419F5A3E200F1DC7A /* LaunchScreen.xib */,
 				EB59E65F19F5A3E200F1DC7A /* Main.storyboard */,
 			);
 			name = View;
@@ -122,7 +125,7 @@
 				EB369F2A19F5C26A007E8C27 /* Controller */,
 				EB369F2D19F5C293007E8C27 /* View */,
 				EB59E66219F5A3E200F1DC7A /* Images.xcassets */,
-				EB59E66419F5A3E200F1DC7A /* LaunchScreen.xib */,
+				EB369F3219F5D1A8007E8C27 /* server.js */,
 				EB59E65A19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld */,
 				EB59E65619F5A3E200F1DC7A /* Supporting Files */,
 			);
@@ -238,6 +241,7 @@
 				EB59E66619F5A3E200F1DC7A /* LaunchScreen.xib in Resources */,
 				EB59E66319F5A3E200F1DC7A /* Images.xcassets in Resources */,
 				EB369F2719F5C222007E8C27 /* RepositoryCell.xib in Resources */,
+				EB369F3319F5D1A8007E8C27 /* server.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +261,7 @@
 			files = (
 				EB369F2319F5BB06007E8C27 /* NetworkController.swift in Sources */,
 				EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */,
-				EB369F2919F5C252007E8C27 /* RepositoryTableViewCell.swift in Sources */,
+				EB369F2919F5C252007E8C27 /* RepositoryCell.swift in Sources */,
 				EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */,
 				EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */,
 				EB369F2519F5C126007E8C27 /* RepositoryViewController.swift in Sources */,
