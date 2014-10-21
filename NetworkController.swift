@@ -7,16 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 class NetworkController {
-    var url = NSURL(fileURLWithPath: "/Users/owner/Documents/repo/GitHubClientApp/server.js")
+    var url = NSURL(string: "http://localhost:3000/")
     var configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
     var urlSession: NSURLSession?
+    var queue: NSOperationQueue?
     
     init() {
         
     }
-    func setup() {
+    func requestData(completionFunction: (error: String?, data: NSDictionary) -> Void) {
         self.urlSession = NSURLSession(configuration: self.configuration)
         var request = NSMutableURLRequest(URL: self.url)
         request.HTTPMethod = "GET"
@@ -24,9 +26,14 @@ class NetworkController {
             if let response = httpResponse as? NSHTTPURLResponse {
                 switch response.statusCode {
                 case 200...299:
-                    for header in response.allHeaderFields {
-                        println(header)
-                    }
+//                    for header in response.allHeaderFields {
+                        var parsedDictionary = self.parseJSON((data))
+                        if parsedDictionary != nil {
+                            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                                completionFunction(error: nil, data: parsedDictionary!)
+                            })
+                        }
+//                    }
                 case 400:
                     println("400: Bad Request - Syntax error likely")
                 case 401:
@@ -48,5 +55,25 @@ class NetworkController {
             }
         })
         dataTask.resume()
+    }
+    
+    func parseJSON(JSONData: NSData) -> NSDictionary? {
+        var error: NSError?
+        if let dictionary = NSJSONSerialization.JSONObjectWithData(JSONData, options: nil, error: &error) as? NSDictionary {
+            return dictionary
+        }
+        else {
+            return nil
+        }
+    }
+    
+    func createUIImage(url: NSURL, completionHanlder: (dataToPass: NSData?) -> Void) -> Void{
+        self.queue = NSOperationQueue()
+        self.queue?.addOperationWithBlock({ () -> Void in
+            let data = NSData(contentsOfURL: url)
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                completionHanlder(dataToPass: data)
+            })
+        })
     }
 }
