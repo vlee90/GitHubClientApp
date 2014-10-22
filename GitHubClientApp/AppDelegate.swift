@@ -19,27 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         //  Will run code when app is ALMOST ready to run.
-        let tokenKey = "token"
-        if let value = NSUserDefaults.standardUserDefaults().valueForKey(tokenKey) as? String {
-            println("Token in memory")
-            // need to set token to session
-            let token = self.networkController.authorizationToken
-            var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            configuration.HTTPAdditionalHeaders = ["Authorization" : "token \(token!)"]
-            self.networkController.session = NSURLSession(configuration: configuration)
-        }
-        else {
-            println("Token not in memory")
-            self.networkController.requestOAuthAcessGET()
-            let token = self.networkController.authorizationToken
-            NSUserDefaults.standardUserDefaults().setObject(token, forKey: tokenKey)
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
         return true
     }
 
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         //  This function is called when the url called returns to the app.
+//  Called when app is called from another app.
         //  The url is the scheme(custom URL) of your app + the request token to be used to eventually get the authorization token. The url is the callbackURL.
         self.networkController.handleCallbackURL(url)
         return true

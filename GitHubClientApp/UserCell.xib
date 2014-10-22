@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="USER_CELL" id="BFG-QJ-5lx" customClass="UserCell" customModule="GitHubClientApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NYa-BG-aXJ">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="33k-z2-adu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xr-HQ-16N">
+                        <rect key="frame" x="0.0" y="50" width="150" height="150"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="7xr-HQ-16N" secondAttribute="bottom" id="4MV-YG-Ckw"/>
+                <constraint firstItem="NYa-BG-aXJ" firstAttribute="top" secondItem="BFG-QJ-5lx" secondAttribute="top" id="604-H9-UCb"/>
+                <constraint firstAttribute="trailing" secondItem="NYa-BG-aXJ" secondAttribute="trailing" id="XCH-Ym-LQR"/>
+                <constraint firstAttribute="trailing" secondItem="7xr-HQ-16N" secondAttribute="trailing" id="Xfy-WO-0Gp"/>
+                <constraint firstItem="7xr-HQ-16N" firstAttribute="leading" secondItem="BFG-QJ-5lx" secondAttribute="leading" id="bgS-F7-58E"/>
+                <constraint firstItem="7xr-HQ-16N" firstAttribute="top" secondItem="NYa-BG-aXJ" secondAttribute="bottom" id="mij-en-DS0"/>
+                <constraint firstItem="NYa-BG-aXJ" firstAttribute="leading" secondItem="BFG-QJ-5lx" secondAttribute="leading" id="znc-C5-Zl9"/>
+            </constraints>
+            <size key="customSize" width="244" height="222"/>
+            <connections>
+                <outlet property="imageView" destination="7xr-HQ-16N" id="dBT-tr-FHt"/>
+                <outlet property="userNameLabel" destination="NYa-BG-aXJ" id="FXS-8w-4NW"/>
+            </connections>
+            <point key="canvasLocation" x="310" y="323"/>
+        </collectionViewCell>
+    </objects>
+</document>

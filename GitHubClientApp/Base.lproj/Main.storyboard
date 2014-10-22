@@ -135,8 +135,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QHp-kd-PZT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="T9L-WB-SkX">
+                                <rect key="frame" x="16" y="0.0" width="568" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ban-u1-dPX"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PuV-aw-pbc" id="MzU-9Z-fXd"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QHp-kd-PZT">
+                                <rect key="frame" x="16" y="100" width="568" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="REPOSITORY_CELL" id="Ymw-ee-7fc" customClass="RepositoryTableViewCell" customModule="GitHubClientApp" customModuleProvider="target">
@@ -150,19 +160,29 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jlq-bm-JkS" firstAttribute="top" secondItem="QHp-kd-PZT" secondAttribute="bottom" id="2Bf-LR-PHD"/>
+                            <constraint firstItem="QHp-kd-PZT" firstAttribute="trailing" secondItem="huA-xl-nv6" secondAttribute="trailingMargin" id="69M-3J-4iU"/>
+                            <constraint firstItem="T9L-WB-SkX" firstAttribute="leading" secondItem="huA-xl-nv6" secondAttribute="leadingMargin" id="VTX-6e-LPN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T9L-WB-SkX" secondAttribute="trailing" id="VfY-yA-OQc"/>
+                            <constraint firstItem="QHp-kd-PZT" firstAttribute="top" secondItem="T9L-WB-SkX" secondAttribute="bottom" id="YtW-QU-8s3"/>
+                            <constraint firstItem="QHp-kd-PZT" firstAttribute="leading" secondItem="huA-xl-nv6" secondAttribute="leadingMargin" id="ZL8-T5-dDF"/>
+                            <constraint firstItem="T9L-WB-SkX" firstAttribute="top" secondItem="mdI-tb-Aua" secondAttribute="bottom" id="pHz-vd-xUo"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="T9L-WB-SkX" id="Slb-rb-532"/>
                         <outlet property="tableView" destination="QHp-kd-PZT" id="a31-BL-nbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khb-1b-vX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="-816"/>
+            <point key="canvasLocation" x="1733" y="-736"/>
         </scene>
-        <!--View Controller-->
+        <!--User View Controller-->
         <scene sceneID="lv5-N4-wca">
             <objects>
-                <viewController id="lS8-7I-lGZ" sceneMemberID="viewController">
+                <viewController id="lS8-7I-lGZ" customClass="UserViewController" customModule="GitHubClientApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yG9-vX-C10"/>
                         <viewControllerLayoutGuide type="bottom" id="3xI-4U-Xeo"/>
@@ -170,12 +190,62 @@
                     <view key="view" contentMode="scaleToFill" id="K4r-Ai-JGN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Zk-PU-85F">
+                                <rect key="frame" x="0.0" y="100" width="600" height="500"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e6Q-fG-2M6">
+                                    <size key="itemSize" width="116" height="105"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="USER_CELL" id="TCg-MJ-dDj" customClass="UserCell" customModule="GitHubClientApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="lS8-7I-lGZ" id="nUd-Wb-ghs"/>
+                                    <outlet property="delegate" destination="lS8-7I-lGZ" id="ZVF-Hd-mok"/>
+                                </connections>
+                            </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="H1r-Nv-Sm8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="aA5-VP-2VV"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="lS8-7I-lGZ" id="taa-eM-niN"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="H1r-Nv-Sm8" firstAttribute="leading" secondItem="K4r-Ai-JGN" secondAttribute="leading" id="9WO-Ln-R4W"/>
+                            <constraint firstAttribute="trailing" secondItem="H1r-Nv-Sm8" secondAttribute="trailing" id="Js2-NR-IkL"/>
+                            <constraint firstItem="1Zk-PU-85F" firstAttribute="top" secondItem="H1r-Nv-Sm8" secondAttribute="bottom" id="LNa-r4-AA0"/>
+                            <constraint firstItem="1Zk-PU-85F" firstAttribute="leading" secondItem="K4r-Ai-JGN" secondAttribute="leading" id="Nd2-Pu-DyC"/>
+                            <constraint firstAttribute="trailing" secondItem="1Zk-PU-85F" secondAttribute="trailing" id="XcZ-P9-68F"/>
+                            <constraint firstItem="1Zk-PU-85F" firstAttribute="top" secondItem="H1r-Nv-Sm8" secondAttribute="bottom" id="akq-bQ-cDt"/>
+                            <constraint firstItem="3xI-4U-Xeo" firstAttribute="top" secondItem="1Zk-PU-85F" secondAttribute="bottom" id="kfy-v5-dnV"/>
+                            <constraint firstItem="H1r-Nv-Sm8" firstAttribute="top" secondItem="yG9-vX-C10" secondAttribute="bottom" id="nay-Bl-J74"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="1Zk-PU-85F" id="4Kj-F9-loL"/>
+                        <outlet property="searchBar" destination="H1r-Nv-Sm8" id="oWj-Y2-cd0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lsz-Y2-IbB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="-60"/>
+            <point key="canvasLocation" x="1739" y="-52"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BdS-Ku-xYC">
