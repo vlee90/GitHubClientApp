@@ -20,6 +20,9 @@
 		EB59E66619F5A3E200F1DC7A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB59E66419F5A3E200F1DC7A /* LaunchScreen.xib */; };
 		EB59E67219F5A3E200F1DC7A /* GitHubClientAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E67119F5A3E200F1DC7A /* GitHubClientAppTests.swift */; };
 		EB59E67E19F5A8F600F1DC7A /* SplitContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E67D19F5A8F600F1DC7A /* SplitContainerViewController.swift */; };
+		EB8D4FE719F85DA700E2537F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D4FE619F85DA700E2537F /* UserViewController.swift */; };
+		EB8D4FE919F85E7600E2537F /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8D4FE819F85E7600E2537F /* UserCell.xib */; };
+		EB8D4FEB19F85E9100E2537F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D4FEA19F85E9100E2537F /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		EB59E67019F5A3E200F1DC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB59E67119F5A3E200F1DC7A /* GitHubClientAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClientAppTests.swift; sourceTree = "<group>"; };
 		EB59E67D19F5A8F600F1DC7A /* SplitContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitContainerViewController.swift; path = ../SplitContainerViewController.swift; sourceTree = "<group>"; };
+		EB8D4FE619F85DA700E2537F /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		EB8D4FE819F85E7600E2537F /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		EB8D4FEA19F85E9100E2537F /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 			children = (
 				EB369F2219F5BB06007E8C27 /* NetworkController.swift */,
 				EB369F2419F5C126007E8C27 /* RepositoryViewController.swift */,
+				EB8D4FE619F85DA700E2537F /* UserViewController.swift */,
 				EB59E67D19F5A8F600F1DC7A /* SplitContainerViewController.swift */,
 				EB59E65D19F5A3E200F1DC7A /* ViewController.swift */,
 			);
@@ -93,6 +100,8 @@
 			children = (
 				EB369F2619F5C222007E8C27 /* RepositoryCell.xib */,
 				EB369F2819F5C252007E8C27 /* RepositoryCell.swift */,
+				EB8D4FE819F85E7600E2537F /* UserCell.xib */,
+				EB8D4FEA19F85E9100E2537F /* UserCell.swift */,
 				EB59E66419F5A3E200F1DC7A /* LaunchScreen.xib */,
 				EB59E65F19F5A3E200F1DC7A /* Main.storyboard */,
 			);
@@ -239,6 +248,7 @@
 			files = (
 				EB59E66119F5A3E200F1DC7A /* Main.storyboard in Resources */,
 				EB59E66619F5A3E200F1DC7A /* LaunchScreen.xib in Resources */,
+				EB8D4FE919F85E7600E2537F /* UserCell.xib in Resources */,
 				EB59E66319F5A3E200F1DC7A /* Images.xcassets in Resources */,
 				EB369F2719F5C222007E8C27 /* RepositoryCell.xib in Resources */,
 				EB369F3319F5D1A8007E8C27 /* server.js in Resources */,
@@ -260,9 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB369F2319F5BB06007E8C27 /* NetworkController.swift in Sources */,
+				EB8D4FE719F85DA700E2537F /* UserViewController.swift in Sources */,
 				EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */,
 				EB369F2919F5C252007E8C27 /* RepositoryCell.swift in Sources */,
 				EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */,
+				EB8D4FEB19F85E9100E2537F /* UserCell.swift in Sources */,
 				EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */,
 				EB369F2519F5C126007E8C27 /* RepositoryViewController.swift in Sources */,
 				EB59E67E19F5A8F600F1DC7A /* SplitContainerViewController.swift in Sources */,
@@ -391,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GitHubClientApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -401,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GitHubClientApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

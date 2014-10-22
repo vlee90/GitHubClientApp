@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var networkController: NetworkController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        self.networkController = appDelegate.networkController
+        self.networkController.requestOAuthAcessGET()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,4 +26,3 @@ class ViewController: UIViewController {
 
 
 }
-
