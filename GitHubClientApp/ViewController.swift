@@ -15,8 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         self.networkController = appDelegate.networkController
-        self.networkController.requestOAuthAcessGET()
-
+        self.networkController.requestOAuthAcessGET(self)
     }
 
     override func didReceiveMemoryWarning() {

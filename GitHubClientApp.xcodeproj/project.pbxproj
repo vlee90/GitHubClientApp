@@ -12,6 +12,8 @@
 		EB369F2719F5C222007E8C27 /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB369F2619F5C222007E8C27 /* RepositoryCell.xib */; };
 		EB369F2919F5C252007E8C27 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB369F2819F5C252007E8C27 /* RepositoryCell.swift */; };
 		EB369F3319F5D1A8007E8C27 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = EB369F3219F5D1A8007E8C27 /* server.js */; };
+		EB3D8FD619F9A6F3005BF5E9 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D8FD519F9A6F3005BF5E9 /* AnimationController.swift */; };
+		EB3D8FD819F9D6DB005BF5E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3D8FD719F9D6DB005BF5E9 /* Extensions.swift */; };
 		EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */; };
 		EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65A19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld */; };
 		EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB59E65D19F5A3E200F1DC7A /* ViewController.swift */; };
@@ -23,6 +25,11 @@
 		EB8D4FE719F85DA700E2537F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D4FE619F85DA700E2537F /* UserViewController.swift */; };
 		EB8D4FE919F85E7600E2537F /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8D4FE819F85E7600E2537F /* UserCell.xib */; };
 		EB8D4FEB19F85E9100E2537F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D4FEA19F85E9100E2537F /* UserCell.swift */; };
+		EB8D4FED19F8664F00E2537F /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D4FEC19F8664F00E2537F /* UserDetailViewController.swift */; };
+		EB8D4FEF19F88D3600E2537F /* UserRepoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB8D4FEE19F88D3600E2537F /* UserRepoCell.xib */; };
+		EB8D4FF119F88D6B00E2537F /* UserRepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8D4FF019F88D6B00E2537F /* UserRepoCell.swift */; };
+		EB916D9819FAA89C0006302C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB916D9719FAA89C0006302C /* WebViewController.swift */; };
+		EB916D9A19FAF1930006302C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB916D9919FAF1930006302C /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +48,8 @@
 		EB369F2619F5C222007E8C27 /* RepositoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 		EB369F2819F5C252007E8C27 /* RepositoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		EB369F3219F5D1A8007E8C27 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = server.js; path = ../server.js; sourceTree = "<group>"; };
+		EB3D8FD519F9A6F3005BF5E9 /* AnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		EB3D8FD719F9D6DB005BF5E9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EB59E65319F5A3E200F1DC7A /* GitHubClientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubClientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB59E65719F5A3E200F1DC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB59E65819F5A3E200F1DC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +65,11 @@
 		EB8D4FE619F85DA700E2537F /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		EB8D4FE819F85E7600E2537F /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		EB8D4FEA19F85E9100E2537F /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		EB8D4FEC19F8664F00E2537F /* UserDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		EB8D4FEE19F88D3600E2537F /* UserRepoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserRepoCell.xib; sourceTree = "<group>"; };
+		EB8D4FF019F88D6B00E2537F /* UserRepoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepoCell.swift; sourceTree = "<group>"; };
+		EB916D9719FAA89C0006302C /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		EB916D9919FAF1930006302C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +93,15 @@
 		EB369F2A19F5C26A007E8C27 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EB3D8FD519F9A6F3005BF5E9 /* AnimationController.swift */,
 				EB369F2219F5BB06007E8C27 /* NetworkController.swift */,
 				EB369F2419F5C126007E8C27 /* RepositoryViewController.swift */,
 				EB8D4FE619F85DA700E2537F /* UserViewController.swift */,
+				EB8D4FEC19F8664F00E2537F /* UserDetailViewController.swift */,
+				EB916D9919FAF1930006302C /* ProfileViewController.swift */,
 				EB59E67D19F5A8F600F1DC7A /* SplitContainerViewController.swift */,
 				EB59E65D19F5A3E200F1DC7A /* ViewController.swift */,
+				EB916D9719FAA89C0006302C /* WebViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -91,6 +109,7 @@
 		EB369F2C19F5C273007E8C27 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB3D8FD719F9D6DB005BF5E9 /* Extensions.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -98,6 +117,8 @@
 		EB369F2D19F5C293007E8C27 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB8D4FEE19F88D3600E2537F /* UserRepoCell.xib */,
+				EB8D4FF019F88D6B00E2537F /* UserRepoCell.swift */,
 				EB369F2619F5C222007E8C27 /* RepositoryCell.xib */,
 				EB369F2819F5C252007E8C27 /* RepositoryCell.swift */,
 				EB8D4FE819F85E7600E2537F /* UserCell.xib */,
@@ -251,6 +272,7 @@
 				EB8D4FE919F85E7600E2537F /* UserCell.xib in Resources */,
 				EB59E66319F5A3E200F1DC7A /* Images.xcassets in Resources */,
 				EB369F2719F5C222007E8C27 /* RepositoryCell.xib in Resources */,
+				EB8D4FEF19F88D3600E2537F /* UserRepoCell.xib in Resources */,
 				EB369F3319F5D1A8007E8C27 /* server.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,13 +291,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3D8FD619F9A6F3005BF5E9 /* AnimationController.swift in Sources */,
+				EB8D4FF119F88D6B00E2537F /* UserRepoCell.swift in Sources */,
 				EB369F2319F5BB06007E8C27 /* NetworkController.swift in Sources */,
 				EB8D4FE719F85DA700E2537F /* UserViewController.swift in Sources */,
 				EB59E65E19F5A3E200F1DC7A /* ViewController.swift in Sources */,
 				EB369F2919F5C252007E8C27 /* RepositoryCell.swift in Sources */,
 				EB59E65919F5A3E200F1DC7A /* AppDelegate.swift in Sources */,
 				EB8D4FEB19F85E9100E2537F /* UserCell.swift in Sources */,
+				EB3D8FD819F9D6DB005BF5E9 /* Extensions.swift in Sources */,
+				EB8D4FED19F8664F00E2537F /* UserDetailViewController.swift in Sources */,
 				EB59E65C19F5A3E200F1DC7A /* GitHubClientApp.xcdatamodeld in Sources */,
+				EB916D9819FAA89C0006302C /* WebViewController.swift in Sources */,
+				EB916D9A19FAF1930006302C /* ProfileViewController.swift in Sources */,
 				EB369F2519F5C126007E8C27 /* RepositoryViewController.swift in Sources */,
 				EB59E67E19F5A8F600F1DC7A /* SplitContainerViewController.swift in Sources */,
 			);

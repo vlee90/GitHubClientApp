@@ -13,7 +13,7 @@ import Accounts
 class NetworkController {
     var firstRun: Bool = true
     var configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-    var queue: NSOperationQueue?
+    var imageQueue = NSOperationQueue()
     var session = NSURLSession()
     
     
@@ -29,7 +29,7 @@ class NetworkController {
         
     }
     
-    func requestOAuthAcessGET() {
+    func requestOAuthAcessGET(viewController: UIViewController) {
         let urlGET = self.githubOAuthGET + "?" + self.clientID + "&" + self.redirectURL + "&" + self.scope
         //https://github.com/login/oauth/authorize?daa6e5fc857f9896c7c2&redirect_uri=appScheme://githubclient&scope=user,repo
         //Calls this delegate function
@@ -45,7 +45,7 @@ class NetworkController {
         }
         else {
             println("Token not in memory")
-            UIApplication.sharedApplication().openURL(NSURL(string: urlGET)!)
+                UIApplication.sharedApplication().openURL(NSURL(string: urlGET)!)
         }
     }
     
@@ -112,6 +112,21 @@ class NetworkController {
         })
         dataTask.resume()
     }
+    
+//    enum CallType {
+//        case searchRepo
+//        case searchUser
+//        case getUser
+//        case getUserRepo
+//        case getAuthUser
+//    }
+//    
+//    func searchRepo(searchString: String?, sort: String?, order: String?, completionFunction: (error: String?, data: NSDictionary) -> Void) {
+//        var urlString: String
+//        
+//        
+//    }
+
     
     func searchRepo(searchString: String?, sort: String?, order: String?, completionFunction: (error: String?, data: NSDictionary) -> Void) {
         var urlString = "https://api.github.com/search/repositories?q=\(searchString!)"
@@ -203,6 +218,122 @@ class NetworkController {
         dataTask.resume()
     }
     
+    func getUser(userName: String?, completionFunction: (error: String?, data: NSDictionary) -> Void) {
+        var urlString = "https://api.github.com/users/\(userName!)"
+        println(urlString)
+        let url = NSURL(string: urlString)
+        var request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        let dataTask = self.session.dataTaskWithRequest(request, completionHandler: { (data, httpResponse, error) -> Void in
+            if let response = httpResponse as? NSHTTPURLResponse {
+                switch response.statusCode {
+                case 200...299:
+                    if let parsedDictionary = self.parseJSONintoDictionary(data) as NSDictionary! {
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            completionFunction(error: nil, data: parsedDictionary)
+                        })
+                    }
+                case 400:
+                    println("400: Bad Request - Syntax error likely")
+                case 401:
+                    println("401: Unauthorized - Authorization either not provided or incorrect")
+                case 403:
+                    println("403: Forbidden - Request valid, but server will not respond")
+                case 404:
+                    println("404: Not Found - Resource not found")
+                case 429:
+                    println("429: Too many requests - Rate limted")
+                case 500...599:
+                    println("\(response.statusCode): Server failed")
+                default:
+                    println("\(response.statusCode): Error")
+                }
+            }
+            else {
+                println("Error occured")
+            }
+        })
+        dataTask.resume()
+    }
+    
+    func getUserRepo(userName: String?, completionFunction: (error: String?, data: NSDictionary) -> Void) {
+        var urlString = "https://api.github.com/users/\(userName!)/repos"
+        println(urlString)
+        let url = NSURL(string: urlString)
+        var request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        let dataTask = self.session.dataTaskWithRequest(request, completionHandler: { (data, httpResponse, error) -> Void in
+            if let response = httpResponse as? NSHTTPURLResponse {
+                switch response.statusCode {
+                case 200...299:
+                    if let parsedDictionary = self.parseJSONintoDictionary(data) as NSDictionary! {
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            completionFunction(error: nil, data: parsedDictionary)
+                        })
+                    }
+                case 400:
+                    println("400: Bad Request - Syntax error likely")
+                case 401:
+                    println("401: Unauthorized - Authorization either not provided or incorrect")
+                case 403:
+                    println("403: Forbidden - Request valid, but server will not respond")
+                case 404:
+                    println("404: Not Found - Resource not found")
+                case 429:
+                    println("429: Too many requests - Rate limted")
+                case 500...599:
+                    println("\(response.statusCode): Server failed")
+                default:
+                    println("\(response.statusCode): Error")
+                }
+            }
+            else {
+                println("Error occured")
+            }
+        })
+        dataTask.resume()
+    }
+
+    func getAuthUser(completionFunction: (error: String?, data: NSDictionary) -> Void) {
+        var urlString = "https://api.github.com/user"
+        println(urlString)
+        let url = NSURL(string: urlString)
+        
+        var request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        let dataTask = self.session.dataTaskWithRequest(request, completionHandler: { (data, httpResponse, error) -> Void in
+            if let response = httpResponse as? NSHTTPURLResponse {
+                switch response.statusCode {
+                case 200...299:
+                    if let parsedDictionary = self.parseJSONintoDictionary(data) as NSDictionary! {
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            completionFunction(error: nil, data: parsedDictionary)
+                        })
+                    }
+                case 400:
+                    println("400: Bad Request - Syntax error likely")
+                case 401:
+                    println("401: Unauthorized - Authorization either not provided or incorrect")
+                case 403:
+                    println("403: Forbidden - Request valid, but server will not respond")
+                case 404:
+                    println("404: Not Found - Resource not found")
+                case 429:
+                    println("429: Too many requests - Rate limted")
+                case 500...599:
+                    println("\(response.statusCode): Server failed")
+                default:
+                    println("\(response.statusCode): Error")
+                }
+            }
+            else {
+                println("Error occured")
+            }
+        })
+        dataTask.resume()
+    }
+
+    
     func parseJSONintoDictionary(JSONData: NSData) -> NSDictionary? {
         var error: NSError?
         if let dictionary = NSJSONSerialization.JSONObjectWithData(JSONData, options: nil, error: &error) as? NSDictionary {
@@ -212,6 +343,7 @@ class NetworkController {
             return nil
         }
     }
+    
     
     func parseJSONintoArray(JSONData: NSData) -> NSArray? {
         var error: NSError?
@@ -224,8 +356,7 @@ class NetworkController {
     }
     
     func createUIImage(url: NSURL, completionHanlder: (imageToPass: UIImage?) -> Void) -> Void{
-        self.queue = NSOperationQueue()
-        self.queue?.addOperationWithBlock({ () -> Void in
+        self.imageQueue.addOperationWithBlock({ () -> Void in
             let data = NSData(contentsOfURL: url)
             let image = UIImage(data: data!)
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in

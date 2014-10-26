@@ -8,12 +8,14 @@
 
 import UIKit
 
-class UserViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class UserViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
     var networkController: NetworkController?
     var userArray = []
+    var animationController = AnimationController()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +36,27 @@ class UserViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         cell.userNameLabel.text = self.userArray[indexPath.row]["login"]! as? String
         cell.userNameLabel.textColor = UIColor.whiteColor()
+        cell.layer.borderColor = UIColor.whiteColor().CGColor
+        cell.layer.borderWidth = 5
         return cell
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var userDetailVC = self.storyboard?.instantiateViewControllerWithIdentifier("USER_DETAIL_VC") as UserDetailViewController
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as UserCell
+        userDetailVC.userName = cell.userNameLabel.text
+        self.navigationController?.delegate = self
+        self.navigationController?.pushViewController(userDetailVC, animated: true)
     }
     
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return userArray.count
+    }
+    
+    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        return searchBar.text.validate()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -50,4 +67,10 @@ class UserViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.searchBar.resignFirstResponder()
         })
     }
+
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        self.navigationController?.delegate = nil
+        return self.animationController
+    }
+    
 }
