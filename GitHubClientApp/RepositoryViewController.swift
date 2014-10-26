@@ -18,6 +18,9 @@ class RepositoryViewController: UIViewController, UITableViewDataSource, UITable
     let reuseIdentifier = "REPOSITORY_CELL"
     let nibCellName = "RepositoryCell"
 
+    var repoURLString = [String]()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -41,6 +44,7 @@ class RepositoryViewController: UIViewController, UITableViewDataSource, UITable
         self.networkController?.createUIImage(avatarURL!, completionHanlder: { (imageToPass) -> Void in
             cell.imageViewProfile.image = imageToPass
         })
+        self.repoURLString.append(self.repoData[indexPath.row]["html_url"] as String)
         cell.repoNameLabel.text = self.repoData[indexPath.row]["name"]! as? String
         cell.nameLabel.text = ownerDictionary!["login"] as? String
         cell.forkLabel.text = "Forks: \(fork!)"
@@ -49,8 +53,18 @@ class RepositoryViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let toVC = self.storyboard?.instantiateViewControllerWithIdentifier("WEB_VIEW") as WebViewController
+        toVC.urlString = self.repoURLString[indexPath.row]
+        self.navigationController?.pushViewController(toVC, animated: true)
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.repoData.count
+    }
+    
+    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        return searchBar.text.validate()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
